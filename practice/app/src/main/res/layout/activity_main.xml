@@ -24,13 +24,17 @@
 
 
 
+
+
+
+
     ]]>
 
     <Button
         android:id="@+id/btn_dec"
-        android:layout_width="136dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="128dp"
         android:text="Decrease"
         app:layout_constraintEnd_toStartOf="@+id/btn_inc"
         app:layout_constraintHorizontal_bias="0.5"
@@ -39,10 +43,10 @@
 
     <Button
         android:id="@+id/btn_inc"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
         android:text="Increase"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_dec"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_dec"
@@ -50,11 +54,11 @@
 
     <Button
         android:id="@+id/btn_rst"
-        android:layout_width="136dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
         android:onClick="reset"
         android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_dec"
         app:layout_constraintEnd_toStartOf="@+id/btn_dec"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +68,9 @@
         android:id="@+id/textView"
         android:layout_width="413dp"
         android:layout_height="194dp"
-        android:text="TextView"
+        android:text="0"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
