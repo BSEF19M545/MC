@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">practice</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="button">Button</string>
 </resources>
