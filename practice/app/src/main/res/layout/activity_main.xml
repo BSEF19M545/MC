@@ -4,31 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"><![CDATA[
-
-
-
-    ;
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_dec"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ]]>
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btn_dec"
@@ -56,7 +32,6 @@
         android:id="@+id/btn_rst"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:onClick="reset"
         android:text="Reset"
         app:layout_constraintBottom_toBottomOf="@+id/btn_dec"
         app:layout_constraintEnd_toStartOf="@+id/btn_dec"
