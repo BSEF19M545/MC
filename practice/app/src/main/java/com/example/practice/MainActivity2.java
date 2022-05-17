@@ -1,8 +1,12 @@
 package com.example.practice;
 
+import static android.R.color.holo_orange_dark;
+import static android.R.color.holo_red_light;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,23 +31,30 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         checkBoxRead.setOnClickListener(this);
 
         simpleButton2 = findViewById(R.id.simpleButton2);
+
+        simpleButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.checkBox):
                 if (checkBoxDone.isChecked())
-                    simpleButton2.setText("Check Box Done");
+                    simpleButton2.setBackgroundColor(getResources().getColor(R.color.red));
                 break;
             case (R.id.checkBox2):
                 if (checkBoxPending.isChecked())
-                    simpleButton2.setText("Check Box Pending");
+                    simpleButton2.setBackgroundColor(getResources().getColor(R.color.teal_200));
                 break;
             case (R.id.checkBox3):
                 if (checkBoxRead.isChecked())
-                    simpleButton2.setText("Check Box Read");
+                    simpleButton2.setBackgroundColor(getResources().getColor(R.color.purple_200));
                 break;
         }
     }

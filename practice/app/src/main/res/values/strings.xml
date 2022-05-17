@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">practice</string>
-    <string name="checkbox">CheckBox</string>
-    <string name="button">Button</string>
+    <string name="checkbox1">Green</string>
+    <string name="checkbox2">Red</string>
+    <string name="checkbox3">Purple</string>
+    <string name="button">Activity 1</string>
 </resources>

@@ -6,22 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <View
+        android:id="@+id/dis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/simpleButton2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/teal_200"
-            android:text="@string/checkbox"
+            android:background="@color/white"
+            android:text="@string/checkbox1"
+            android:textColorHighlight="#000000"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <CheckBox
@@ -29,28 +41,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/teal_700"
-            android:backgroundTint="#00BCD4"
-            android:text="@string/checkbox" />
+            android:background="@color/white"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/checkbox2"
+            android:textColorHighlight="#000000" />
 
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:background="@color/teal_200"
-            android:text="@string/checkbox" />
+            android:background="@color/white"
+            android:text="@string/checkbox3"
+            android:textColorHighlight="#000000" />
     </LinearLayout>
 
     <Button
         android:id="@+id/simpleButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="144dp"
         android:text="@string/button"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="TextContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
