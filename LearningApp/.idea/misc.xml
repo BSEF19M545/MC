@@ -3,11 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.207" />
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/drawable/Apple1_background.xml" value="0.1" />
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.207" />
         <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/layout/activity_a.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/layout/activity_b.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/layout/activity_c.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/layout/activity_d.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/layout/activity_e.xml" value="0.1" />
         <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/layout/activity_lessons.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/mipmap-anydpi-v26/apple1.xml" value="0.1" />
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/mipmap-anydpi-v26/apple3.xml" value="0.1" />
+        <entry key="..\:/Users/Abdul Wahab/Desktop/6th_semester/MC/MC/LearningApp/app/src/main/res/mipmap-anydpi-v26/b2.xml" value="0.1" />
       </map>
     </option>
   </component>
