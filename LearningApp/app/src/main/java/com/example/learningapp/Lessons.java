@@ -14,7 +14,8 @@ public class Lessons extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-        Button btn_A,btn_B,btn_C,btn_D,btn_E,btn_F,btn_G,btn_H,btn_I,btn_J,btn_K,btn_L ;
+        Button btn_A,btn_B,btn_C,btn_D,btn_E,btn_F,btn_G,btn_H,btn_I,btn_J,btn_K,btn_L, btn_M;
+        Button btn_N,btn_O,btn_P,btn_Q,btn_R,btn_S,btn_T,btn_U,btn_V,btn_W,btn_X,btn_Y,btn_Z;
 
         btn_A=findViewById(R.id.A);
         btn_B=findViewById(R.id.B);
@@ -28,6 +29,20 @@ public class Lessons extends AppCompatActivity implements View.OnClickListener{
         btn_J=findViewById(R.id.J);
         btn_K=findViewById(R.id.K);
         btn_L=findViewById(R.id.L);
+        btn_M=findViewById(R.id.M);
+        btn_N=findViewById(R.id.N);
+        btn_O=findViewById(R.id.O);
+        btn_P=findViewById(R.id.P);
+        btn_Q=findViewById(R.id.Q);
+        btn_R=findViewById(R.id.R);
+        btn_S=findViewById(R.id.S);
+        btn_T=findViewById(R.id.T);
+        btn_U=findViewById(R.id.U);
+        btn_V=findViewById(R.id.V);
+        btn_W=findViewById(R.id.W);
+        btn_X=findViewById(R.id.X);
+        btn_Y=findViewById(R.id.Y);
+        btn_Z=findViewById(R.id.Z);
 
         btn_A.setOnClickListener(this);
         btn_B.setOnClickListener(this);
@@ -41,7 +56,20 @@ public class Lessons extends AppCompatActivity implements View.OnClickListener{
         btn_J.setOnClickListener(this);
         btn_K.setOnClickListener(this);
         btn_L.setOnClickListener(this);
-        Intent intent;
+        btn_M.setOnClickListener(this);
+        btn_N.setOnClickListener(this);
+        btn_O.setOnClickListener(this);
+        btn_P.setOnClickListener(this);
+        btn_Q.setOnClickListener(this);
+        btn_R.setOnClickListener(this);
+        btn_S.setOnClickListener(this);
+        btn_T.setOnClickListener(this);
+        btn_U.setOnClickListener(this);
+        btn_V.setOnClickListener(this);
+        btn_W.setOnClickListener(this);
+        btn_X.setOnClickListener(this);
+        btn_Y.setOnClickListener(this);
+        btn_Z.setOnClickListener(this);
     }
 
     @Override
@@ -97,6 +125,62 @@ public class Lessons extends AppCompatActivity implements View.OnClickListener{
                 break;
             case  R.id.L:
                 intent=new Intent(Lessons.this,L.class);
+                startActivity(intent);
+                break;
+            case  R.id.M:
+                intent=new Intent(Lessons.this,M.class);
+                startActivity(intent);
+                break;
+            case  R.id.N:
+                intent=new Intent(Lessons.this,N.class);
+                startActivity(intent);
+                break;
+            case  R.id.O:
+                intent=new Intent(Lessons.this,O.class);
+                startActivity(intent);
+                break;
+            case  R.id.P:
+                intent=new Intent(Lessons.this,P.class);
+                startActivity(intent);
+                break;
+            case  R.id.Q:
+                intent=new Intent(Lessons.this,Q.class);
+                startActivity(intent);
+                break;
+            case  R.id.R:
+                intent=new Intent(Lessons.this,R.class);
+                startActivity(intent);
+                break;
+            case  R.id.S:
+                intent=new Intent(Lessons.this,S.class);
+                startActivity(intent);
+                break;
+            case  R.id.T:
+                intent=new Intent(Lessons.this,T.class);
+                startActivity(intent);
+                break;
+            case  R.id.U:
+                intent=new Intent(Lessons.this,U.class);
+                startActivity(intent);
+                break;
+            case  R.id.V:
+                intent=new Intent(Lessons.this,V.class);
+                startActivity(intent);
+                break;
+            case  R.id.W:
+                intent=new Intent(Lessons.this,W.class);
+                startActivity(intent);
+                break;
+            case  R.id.X:
+                intent=new Intent(Lessons.this,X.class);
+                startActivity(intent);
+                break;
+            case  R.id.Y:
+                intent=new Intent(Lessons.this,Y.class);
+                startActivity(intent);
+                break;
+            case  R.id.Z:
+                intent=new Intent(Lessons.this,Z.class);
                 startActivity(intent);
                 break;
 

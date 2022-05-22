@@ -22,7 +22,7 @@
     <ScrollView
         android:id="@+id/scview"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,26 +36,14 @@
             <ImageView
                 android:id="@+id/imageView18"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="300dp"
                 app:srcCompat="@mipmap/apple1_foreground" />
 
             <ImageView
                 android:id="@+id/imageView12"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                app:srcCompat="@mipmap/apple3_foreground" />
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                app:srcCompat="@mipmap/apple2" />
-
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                app:srcCompat="@mipmap/apple4" />
+                android:layout_height="300dp"
+                app:srcCompat="@mipmap/a2_foreground" />
 
         </LinearLayout>
     </ScrollView>

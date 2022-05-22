@@ -34,13 +34,13 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/imageView14"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/c1" />
+                app:srcCompat="@mipmap/c1_foreground" />
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/imageView15"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 app:srcCompat="@mipmap/c2_foreground" />
