@@ -46,7 +46,7 @@ public class Quiz extends AppCompatActivity {
         char opt3=setRadioValue(name3,"rb3");
         char opt4=setRadioValue(name4,"rb4");
         char opt5=setRadioValue(name5,"rb5");
-
+        //System.out.println(opt5);
         char[] answer={opt1,opt2,opt3,opt4,opt5};
 
         View v = findViewById(R.id.view1);
@@ -111,7 +111,7 @@ public class Quiz extends AppCompatActivity {
 
     private int ansCheck(RadioGroup one,RadioGroup two,RadioGroup three,RadioGroup four,RadioGroup five,char[] answer) {
 
-        RadioButton selectedRadioButton1 = findViewById(one.getCheckedRadioButtonId());
+        //RadioButton selectedRadioButton1 = findViewById(one.getCheckedRadioButtonId());
        /* RadioButton selectedRadioButton2 = findViewById(two.getCheckedRadioButtonId());
         RadioButton selectedRadioButton3 = findViewById(three.getCheckedRadioButtonId());
         RadioButton selectedRadioButton4 = findViewById(four.getCheckedRadioButtonId());
@@ -202,7 +202,7 @@ public class Quiz extends AppCompatActivity {
         //option nu,ber generator
         String[] arr={"1","2","3"};
         int rand1=Integer.parseInt(arr[r.nextInt(arr.length)]);
-        int rand2=1,rand3=1;
+        int rand2,rand3;
 
         do {
             rand2=Integer.parseInt(arr[r.nextInt(arr.length)]);
