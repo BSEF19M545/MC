@@ -37,8 +37,9 @@
                 android:layout_height="300dp" />
 
             <RadioGroup
+                android:id="@+id/rg1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/rb11"
@@ -49,8 +50,7 @@
                 <RadioButton
                     android:id="@+id/rb12"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb13"
@@ -65,8 +65,9 @@
                 android:layout_height="300dp" />
 
             <RadioGroup
+                android:id="@+id/rg2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/rb21"
@@ -81,7 +82,7 @@
                     android:text="RadioButton" />
 
                 <RadioButton
-                    android:id="@+id/eb23"
+                    android:id="@+id/rb23"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="RadioButton" />
@@ -94,8 +95,9 @@
                 android:layout_height="300dp" />
 
             <RadioGroup
+                android:id="@+id/rg3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/rb31"
@@ -122,8 +124,9 @@
                 android:layout_height="300dp" />
 
             <RadioGroup
+                android:id="@+id/rg4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/rb41"
@@ -150,8 +153,9 @@
                 android:layout_height="300dp" />
 
             <RadioGroup
+                android:id="@+id/rg5"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/rb51"
@@ -171,6 +175,12 @@
                     android:layout_height="wrap_content"
                     android:text="RadioButton" />
             </RadioGroup>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
         </LinearLayout>
     </ScrollView>
 
