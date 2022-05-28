@@ -45,7 +45,9 @@
                     android:id="@+id/rb11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:text="RadioButton"
+                    android:textColorHighlight="#554D4D"
+                    android:textColorLink="#4C4949" />
 
                 <RadioButton
                     android:id="@+id/rb12"

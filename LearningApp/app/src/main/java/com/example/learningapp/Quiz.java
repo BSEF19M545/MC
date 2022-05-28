@@ -65,133 +65,83 @@ public class Quiz extends AppCompatActivity {
         RadioGroup rgq4=findViewById(R.id.rg4);
         RadioGroup rgq5=findViewById(R.id.rg5);
 
+        RadioGroup[] out={rgq1,rgq2,rgq3,rgq4,rgq5};
 
         Button btn=findViewById(R.id.submit);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                emptyCheck(rgq1,rgq2,rgq3,rgq4,rgq5);
-                int marks=ansCheck(rgq1,rgq2,rgq3,rgq4,rgq5,answer);
-                Toast.makeText(getApplicationContext(), "You achieved "+ marks+" marks", Toast.LENGTH_LONG).show();
+                if(emptyCheck(out)==1)
+                {
+                    int marks=ansCheck(out,answer);
+                    Toast.makeText(getApplicationContext(), "You achieved "+ marks+" marks", Toast.LENGTH_LONG).show();
+                }
 
             }
         });
     }
 
-    private void emptyCheck(RadioGroup one,RadioGroup two,RadioGroup three,RadioGroup four,RadioGroup five) {
+    private int emptyCheck(RadioGroup[] out) {
         String ans="Please select answer of question";
-        if(one.getCheckedRadioButtonId()==-1||two.getCheckedRadioButtonId()==-1||three.getCheckedRadioButtonId()==-1||four.getCheckedRadioButtonId()==-1||five.getCheckedRadioButtonId()==-1)
+        if(out[0].getCheckedRadioButtonId()==-1||out[1].getCheckedRadioButtonId()==-1||out[2].getCheckedRadioButtonId()==-1||out[3].getCheckedRadioButtonId()==-1||out[4].getCheckedRadioButtonId()==-1)
         {
-            if(one.getCheckedRadioButtonId()==-1)
+            if(out[0].getCheckedRadioButtonId()==-1)
             {
                 ans=ans+"1";
             }
-            if(two.getCheckedRadioButtonId()==-1)
+            if(out[1].getCheckedRadioButtonId()==-1)
             {
                 ans=ans+",2";
             }
-            if(three.getCheckedRadioButtonId()==-1)
+            if(out[2].getCheckedRadioButtonId()==-1)
             {
                 ans=ans+",3";
             }
-            if(four.getCheckedRadioButtonId()==-1)
+            if(out[3].getCheckedRadioButtonId()==-1)
             {
                 ans=ans+",4";
             }
-            if(five.getCheckedRadioButtonId()==-1)
+            if(out[4].getCheckedRadioButtonId()==-1)
             {
                 ans=ans+",5";
             }
             Toast.makeText(getApplicationContext(), ans, Toast.LENGTH_LONG).show();
+            return 0;
         }
         else{
-            return;
+            return 1;
         }
     }
 
-    private int ansCheck(RadioGroup one,RadioGroup two,RadioGroup three,RadioGroup four,RadioGroup five,char[] answer) {
+    private int ansCheck(RadioGroup[] out,char[] answer) {
 
-        //RadioButton selectedRadioButton1 = findViewById(one.getCheckedRadioButtonId());
-       /* RadioButton selectedRadioButton2 = findViewById(two.getCheckedRadioButtonId());
-        RadioButton selectedRadioButton3 = findViewById(three.getCheckedRadioButtonId());
-        RadioButton selectedRadioButton4 = findViewById(four.getCheckedRadioButtonId());
-        RadioButton selectedRadioButton5 = findViewById(five.getCheckedRadioButtonId());*/
+        RadioButton[] rBtn=new RadioButton[5];
+        rBtn[0]=(RadioButton) findViewById(out[0].getCheckedRadioButtonId());
+        //System.out.println(selectedRadioButton1.getText().toString());
+        rBtn[1] = (RadioButton)findViewById(out[1].getCheckedRadioButtonId());
+        rBtn[2] = (RadioButton) findViewById(out[2].getCheckedRadioButtonId());
+        rBtn[3] = (RadioButton)findViewById(out[3].getCheckedRadioButtonId());
+        rBtn[4] = (RadioButton)findViewById(out[4].getCheckedRadioButtonId());
 
-        char[] chk1=new char[5];//{((selectedRadioButton1.getText().toString()).charAt(0)),((selectedRadioButton2.getText().toString()).charAt(0)),((selectedRadioButton3.getText().toString()).charAt(0)),((selectedRadioButton4.getText().toString()).charAt(0)),((selectedRadioButton5.getText().toString()).charAt(0))};
-        //System.out.println(((((RadioGroup)findViewById(R.id.rg1)).getCheckedRadioButtonId())));
 
-        if(((RadioButton)findViewById(R.id.rb11)).isChecked())
+        char[] chk1=new char[5];
+        for(int i=0;i<5;i++)
         {
-            chk1[0]=(((RadioButton)findViewById(R.id.rb11)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb12)).isChecked())
-        {
-            chk1[0]=(((RadioButton)findViewById(R.id.rb12)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb13)).isChecked())
-        {
-            chk1[0]=(((RadioButton)findViewById(R.id.rb13)).getText()).charAt(0);
+            chk1[i]=rBtn[i].getText().toString().charAt(0);
         }
 
-        if(((RadioButton)findViewById(R.id.rb21)).isChecked())
-        {
-            chk1[1]=(((RadioButton)findViewById(R.id.rb21)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb22)).isChecked())
-        {
-            chk1[1]=(((RadioButton)findViewById(R.id.rb22)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb23)).isChecked())
-        {
-            chk1[1]=(((RadioButton)findViewById(R.id.rb23)).getText()).charAt(0);
-        }
-
-        if(((RadioButton)findViewById(R.id.rb31)).isChecked())
-        {
-            chk1[2]=(((RadioButton)findViewById(R.id.rb31)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb32)).isChecked())
-        {
-            chk1[2]=(((RadioButton)findViewById(R.id.rb32)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb33)).isChecked())
-        {
-            chk1[2]=(((RadioButton)findViewById(R.id.rb33)).getText()).charAt(0);
-        }
-
-        if(((RadioButton)findViewById(R.id.rb41)).isChecked())
-        {
-            chk1[3]=(((RadioButton)findViewById(R.id.rb41)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb42)).isChecked())
-        {
-            chk1[3]=(((RadioButton)findViewById(R.id.rb42)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb43)).isChecked())
-        {
-            chk1[3]=(((RadioButton)findViewById(R.id.rb43)).getText()).charAt(0);
-        }
-
-        if(((RadioButton)findViewById(R.id.rb41)).isChecked())
-        {
-            chk1[4]=(((RadioButton)findViewById(R.id.rb41)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb42)).isChecked())
-        {
-            chk1[4]=(((RadioButton)findViewById(R.id.rb42)).getText()).charAt(0);
-        }
-        else if(((RadioButton)findViewById(R.id.rb43)).isChecked())
-        {
-            chk1[4]=(((RadioButton)findViewById(R.id.rb43)).getText()).charAt(0);
-        }
 
         int marks=0;
         for(int i=0;i<5;i++)
         {
-
             if(chk1[i]==answer[i])
             {
                 marks++;
+                rBtn[i].setBackgroundColor(getResources().getColor(R.color.green));
+            }
+            else
+            {
+                rBtn[i].setBackgroundColor(getResources().getColor(R.color.red));
             }
         }
         return marks;
