@@ -45,23 +45,20 @@
 
                 <RadioButton
                     android:id="@+id/rb11"
-                    android:layout_width="wrap_content"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:paddingRight="100dp"
                     android:textColorHighlight="#554D4D"
                     android:textColorLink="#4C4949" />
 
                 <RadioButton
                     android:id="@+id/rb12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
             </RadioGroup>
 
             <View
@@ -77,21 +74,18 @@
 
                 <RadioButton
                     android:id="@+id/rb21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb22"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
             </RadioGroup>
 
@@ -108,21 +102,18 @@
 
                 <RadioButton
                     android:id="@+id/rb31"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb32"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb33"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
             </RadioGroup>
 
             <View
@@ -138,21 +129,18 @@
 
                 <RadioButton
                     android:id="@+id/rb41"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb42"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb43"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
             </RadioGroup>
 
             <View
@@ -168,21 +156,18 @@
 
                 <RadioButton
                     android:id="@+id/rb51"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb52"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/rb53"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="100dp" />
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
             </RadioGroup>
 
             <Button
