@@ -5,7 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
 
 public class Lessons extends AppCompatActivity implements View.OnClickListener{
 
@@ -13,8 +20,43 @@ public class Lessons extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
+        ArrayList<String> lessons = new ArrayList<String> ();
+        ListView listView;
 
-        Button btn_A,btn_B,btn_C,btn_D,btn_E,btn_F,btn_G,btn_H,btn_I,btn_J,btn_K,btn_L, btn_M;
+        lessons.add("A");
+        lessons.add("B");
+        lessons.add("C");
+        lessons.add("D");
+        lessons.add("E");
+        lessons.add("F");
+        lessons.add("G");
+        lessons.add("H");
+        lessons.add("I");
+        lessons.add("J");
+        lessons.add("K");
+        lessons.add("L");
+        lessons.add("M");
+        lessons.add("N");
+        lessons.add("O");
+        lessons.add("P");
+        lessons.add("Q");
+        lessons.add("R");
+        lessons.add("S");
+        lessons.add("T");
+        lessons.add("U");
+        lessons.add("V");
+        lessons.add("W");
+        lessons.add("X");
+        lessons.add("Y");
+        lessons.add("Z");
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lessons);
+        listView = findViewById(R.id.listView);
+        listView.setAdapter(arrayAdapter);
+
+
+
+        /*Button btn_A,btn_B,btn_C,btn_D,btn_E,btn_F,btn_G,btn_H,btn_I,btn_J,btn_K,btn_L, btn_M;
         Button btn_N,btn_O,btn_P,btn_Q,btn_R,btn_S,btn_T,btn_U,btn_V,btn_W,btn_X,btn_Y,btn_Z;
 
         btn_A=findViewById(R.id.A);
@@ -69,14 +111,14 @@ public class Lessons extends AppCompatActivity implements View.OnClickListener{
         btn_W.setOnClickListener(this);
         btn_X.setOnClickListener(this);
         btn_Y.setOnClickListener(this);
-        btn_Z.setOnClickListener(this);
+        btn_Z.setOnClickListener(this);*/
     }
 
     @Override
     public void onClick(View view) {
         //view.getId();
 
-        Intent intent;
+        /*Intent intent;
         switch (view.getId()) {
             case R.id.A:
 
@@ -185,6 +227,6 @@ public class Lessons extends AppCompatActivity implements View.OnClickListener{
                 break;
 
 
-        }
+        }*/
     }
 }

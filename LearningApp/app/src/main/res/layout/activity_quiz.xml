@@ -60,7 +60,8 @@
                 <RadioButton
                     android:id="@+id/rb13"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="100dp" />
             </RadioGroup>
 
             <View
@@ -88,8 +89,9 @@
 
                 <RadioButton
                     android:id="@+id/rb23"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="100dp" />
 
             </RadioGroup>
 
@@ -118,8 +120,9 @@
 
                 <RadioButton
                     android:id="@+id/rb33"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="100dp" />
             </RadioGroup>
 
             <View
@@ -147,8 +150,9 @@
 
                 <RadioButton
                     android:id="@+id/rb43"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="100dp" />
             </RadioGroup>
 
             <View
@@ -176,8 +180,9 @@
 
                 <RadioButton
                     android:id="@+id/rb53"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="100dp" />
             </RadioGroup>
 
             <Button
