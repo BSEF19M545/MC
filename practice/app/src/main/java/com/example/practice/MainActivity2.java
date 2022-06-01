@@ -1,16 +1,19 @@
 package com.example.practice;
 
-import static android.R.color.holo_orange_dark;
-import static android.R.color.holo_red_light;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+
+import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
     CheckBox checkBoxDone, checkBoxPending, checkBoxRead;
@@ -58,5 +61,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
+
+    
 }
 
