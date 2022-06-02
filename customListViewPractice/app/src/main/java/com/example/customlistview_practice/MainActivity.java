@@ -1,9 +1,13 @@
 package com.example.customlistview_practice;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -24,5 +28,11 @@ public class MainActivity extends AppCompatActivity {
             MyListView adapter = new MyListView(this, studentArrayList);
             ListView listView = findViewById(R.id.listView);
             listView.setAdapter(adapter);
+            //listView.addView(new Button(this));
+            /*TextView f=new TextView(getApplicationContext());
+            f.setText("fu");
+            ((ConstraintLayout)findViewById(R.id.cl)).addView(f);*/
+            //listView.addView(f);
+            //listView.addView();
         }
     }
