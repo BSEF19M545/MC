@@ -21,30 +21,20 @@ import java.util.ArrayList;
 
     public class MyListView extends ArrayAdapter<Student> {
         public MyListView(@NonNull Context context, ArrayList<Student> studentArrayList) {
-            //super(context, R.layout.customized_layout,mainTitle);
             super(context, 0, studentArrayList);
-            /*this.context = context;
-            this.mainTitle = mainTitle;
-            this.subTitle = subTitle;
-            this.imageId = imageId;*/
         }
-
-        /*private final Activity context;
-        private final String[] mainTitle;
-        private final String[] subTitle;
-        private final Integer[] imageId;*/
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
             Student student = getItem(position);
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.customized_layout, parent, false);
-            //TextView textViewName = convertView.findViewById(R.id.textViewName);
-            //TextView textViewCampus = convertView.findViewById(R.id.textViewCampus);
-            //TextView textViewId = convertView.findViewById(R.id.textViewID);
+            TextView textViewName = convertView.findViewById(R.id.textViewName);
+            TextView textViewCampus = convertView.findViewById(R.id.textViewCampus);
+            TextView textViewId = convertView.findViewById(R.id.textViewID);
             ImageView imageView = convertView.findViewById(R.id.imageView);
-            //textViewName.setText(student.name);
-            //textViewCampus.setText(student.campus);
-            //textViewId.setText(student.rollNumber);
+            textViewName.setText(student.name);
+            textViewCampus.setText(student.campus);
+            textViewId.setText(student.rollNumber);
             imageView.setImageResource(student.imageID);
             return convertView;
         };
