@@ -21,8 +21,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
     public class MyListView extends ArrayAdapter<Student> {
+        int size;
         public MyListView(@NonNull Context context, ArrayList<Student> studentArrayList) {
             super(context, 0, studentArrayList);
+             size=studentArrayList.size();
         }
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -43,6 +45,14 @@ import java.util.ArrayList;
             rb12.setText(student.rollNumber);
             rb13.setText(student.rollNumber);
             imageView.setImageResource(student.imageID);
+            Button button=convertView.findViewById(R.id.button);
+            button.setVisibility(View.GONE);
+            System.out.println("Position"+position+" and SIze"+size);
+            if(position==size-1)
+            {
+                button.setVisibility(View.VISIBLE);
+            }
+
             return convertView;
         };
 
