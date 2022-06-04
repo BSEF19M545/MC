@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningApp">
         <activity
+            android:name=".customQuiz"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".quiz2"-->
+<!--            android:exported="false" />-->
+        <activity
             android:name=".Result"
             android:exported="false" />
         <activity

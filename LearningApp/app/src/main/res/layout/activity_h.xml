@@ -38,13 +38,13 @@
                 android:id="@+id/imageView11"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/h1_foreground" />
+                app:srcCompat="@drawable/h1" />
 
             <ImageView
                 android:id="@+id/imageView13"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/h2_foreground" />
+                app:srcCompat="@drawable/h2" />
         </LinearLayout>
     </ScrollView>
 

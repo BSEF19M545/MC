@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btn_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,Quiz.class);
+                Intent intent=new Intent(MainActivity.this,customQuiz.class);
                 startActivity(intent);
             }
         });

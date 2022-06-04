@@ -37,13 +37,13 @@
                 android:id="@+id/imageView18"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/apple1_foreground" />
+                app:srcCompat="@drawable/a1" />
 
             <ImageView
                 android:id="@+id/imageView12"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/a2_foreground" />
+                app:srcCompat="@drawable/a2" />
 
         </LinearLayout>
     </ScrollView>

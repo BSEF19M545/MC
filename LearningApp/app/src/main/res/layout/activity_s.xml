@@ -38,13 +38,13 @@
                 android:id="@+id/imageView37"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/s1_foreground" />
+                app:srcCompat="@drawable/s1" />
 
             <ImageView
                 android:id="@+id/imageView38"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/s2_foreground" />
+                app:srcCompat="@drawable/s2" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
