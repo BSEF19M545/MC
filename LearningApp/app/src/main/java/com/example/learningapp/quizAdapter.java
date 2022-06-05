@@ -78,7 +78,7 @@ public class quizAdapter extends ArrayAdapter<quizClass>{
 
         imageView.setImageResource(quiz.image);
         Button button=convertView.findViewById(R.id.submit1);
-        button.setVisibility(View.GONE);
+        //button.setVisibility(View.GONE);
 
         rb11.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
