@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
         btn_lesson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,newLesson.class);
+                Intent intent=new Intent(MainActivity.this,interLesson.class);
                 startActivity(intent);
             }
         });
         btn_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,customQuiz.class);
+                Intent intent=new Intent(MainActivity.this,interQuiz.class);
                 startActivity(intent);
             }
         });

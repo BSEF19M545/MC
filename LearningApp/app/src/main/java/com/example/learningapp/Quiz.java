@@ -51,12 +51,12 @@ public class Quiz extends AppCompatActivity {
 
         View v = findViewById(R.id.view1);
         int resId1;
-        resId1=getResources().getIdentifier(name1 + "_foreground", "mipmap", Quiz.this.getPackageName());
+        resId1=getResources().getIdentifier(name1 , "drawable", Quiz.this.getPackageName());
         v.setBackgroundResource(resId1);
-        (findViewById(R.id.view2)).setBackgroundResource(getResources().getIdentifier(name2 + "_foreground", "mipmap", Quiz.this.getPackageName()));
-        (findViewById(R.id.view5)).setBackgroundResource(getResources().getIdentifier(name3 + "_foreground", "mipmap", Quiz.this.getPackageName()));
-        (findViewById(R.id.view6)).setBackgroundResource(getResources().getIdentifier(name4 + "_foreground", "mipmap", Quiz.this.getPackageName()));
-        (findViewById(R.id.view7)).setBackgroundResource(getResources().getIdentifier(name5 + "_foreground", "mipmap", Quiz.this.getPackageName()));
+        (findViewById(R.id.view2)).setBackgroundResource(getResources().getIdentifier(name2 , "drawable", Quiz.this.getPackageName()));
+        (findViewById(R.id.view5)).setBackgroundResource(getResources().getIdentifier(name3 , "drawable", Quiz.this.getPackageName()));
+        (findViewById(R.id.view6)).setBackgroundResource(getResources().getIdentifier(name4 , "drawable", Quiz.this.getPackageName()));
+        (findViewById(R.id.view7)).setBackgroundResource(getResources().getIdentifier(name5 , "drawable", Quiz.this.getPackageName()));
 
 
         RadioGroup rgq1=findViewById(R.id.rg1);

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningApp">
         <activity
+            android:name=".interQuiz"
+            android:exported="false" />
+        <activity
+            android:name=".interLesson"
+            android:exported="false" />
+        <activity
             android:name=".newLesson"
             android:exported="false" />
         <activity
