@@ -146,7 +146,7 @@ public class Quiz extends AppCompatActivity {
         }
         return marks;
     }
-
+//setting up the options to choose from and returning answer
     private char setRadioValue(String picName,String question ) {
         Random r=new Random();
         //option nu,ber generator

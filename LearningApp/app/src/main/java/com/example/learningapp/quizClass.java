@@ -2,11 +2,11 @@ package com.example.learningapp;
 
 public class quizClass {
         public int image;
-        public String op1;
-        public String op2;
-        public String op3;
+        public char op1;
+        public char op2;
+        public char op3;
 
-        public quizClass(int image, String op1, String op2, String op3) {
+        public quizClass(int image, char op1, char op2, char op3) {
             this.image = image;
             this.op1 = op1;
             this.op2 = op2;
