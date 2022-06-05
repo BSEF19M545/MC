@@ -2,12 +2,9 @@ package com.example.learningapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
+
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -52,79 +49,71 @@ public class customQuiz extends AppCompatActivity {
         quizClassArrayList.add(setValue(name3));
         quizClassArrayList.add(setValue(name4));
         quizClassArrayList.add(setValue(name5));
-        //setValue(name1);
-        //quizClassArrayList.add(new quizClass());
-/*
-        quizClassArrayList.add(new quizClass(getResources().getIdentifier(name1 , "drawable", customQuiz.this.getPackageName()), 'A', "B", "C"));
-        quizClassArrayList.add(new quizClass(getResources().getIdentifier(name2 , "drawable", customQuiz.this.getPackageName()), "A", "B", "C"));
-        quizClassArrayList.add(new quizClass(getResources().getIdentifier(name3 , "drawable", customQuiz.this.getPackageName()), "A", "B", "C"));
-        quizClassArrayList.add(new quizClass(getResources().getIdentifier(name4 , "drawable", customQuiz.this.getPackageName()), "A", "B", "C"));
-        quizClassArrayList.add(new quizClass(getResources().getIdentifier(name5 , "drawable", customQuiz.this.getPackageName()), "A", "B", "C"));*/
-
-        //(findViewById(R.id.view2)).setBackgroundResource(getResources().getIdentifier(name2 , "drawable", customQuiz.this.getPackageName()));
-
-
 
         quizAdapter adapter = new quizAdapter(this, quizClassArrayList);
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
-        RadioGroup rg=((View)adapter.getView(0,null,null)).findViewById(R.id.rg1);
-        //System.out.println(rg.getCheckedRadioButtonId());
 
         Button btn=findViewById(R.id.btn_sub);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //System.out.println("sdkjfbsdf");
-                View adapterView=adapter.getView(1,null,null);
-                RadioGroup r=adapterView.findViewById(R.id.rg1);
-                System.out.println("llllllllllllllllll");
-                RadioButton rb =adapterView.findViewById(r.getCheckedRadioButtonId());
-                Toast.makeText(customQuiz.this, rb.getText().toString(), Toast.LENGTH_SHORT).show();
 
-                //r.getTag();
-                /*if(adapterView.findViewById(r.getCheckedRadioButtonId())!=null)
-                {
+                RadioGroup[] rg=new RadioGroup[5];
+                RadioButton[] rb=new RadioButton[5];
+                View [] adapterView=new View[5];
+                adapterView[0]=adapter.getView(0,null,null);
+                rg[0]=adapterView[0].findViewById(R.id.rg1);
 
-                    System.out.println("oooooooooooooooooo");
-                    RadioButton rb=findViewById(r.getCheckedRadioButtonId());
-                    rb.setText("ololololol");
-                    System.out.println(rb.getText().toString());
+                adapterView[1]=adapter.getView(1,null,null);
+                rg[1]=adapterView[1].findViewById(R.id.rg1);
 
-                }*/
+                adapterView[2]=adapter.getView(2,null,null);
+                rg[2]=adapterView[2].findViewById(R.id.rg1);
 
-                //RadioGroup r=findViewById(R.id.rg1);
-                //r.getCheckedRadioButtonId()
+                adapterView[3]=adapter.getView(3,null,null);
+                rg[3]=adapterView[3].findViewById(R.id.rg1);
+
+                adapterView[4]=adapter.getView(4,null,null);
+                rg[4]=adapterView[4].findViewById(R.id.rg1);
+                if(emptyCheck(rg,adapterView)==1) {
+
+
+                    rb[0] = adapterView[0].findViewById(rg[0].getCheckedRadioButtonId());
+                    rb[1] = adapterView[1].findViewById(rg[1].getCheckedRadioButtonId());
+                    rb[2] = adapterView[2].findViewById(rg[2].getCheckedRadioButtonId());
+                    rb[3] = adapterView[3].findViewById(rg[3].getCheckedRadioButtonId());
+                    rb[4] = adapterView[4].findViewById(rg[4].getCheckedRadioButtonId());
+                    int marks = 0;
+
+                    for (int i = 0; i < 5; i++) {
+                        if (rb[i].getText().toString().charAt(0) == (quizClassArrayList.get(i)).getAns()) {
+                            marks += 1;
+                        }
+                    }
+
+
+                    Toast.makeText(customQuiz.this, "You obtained " + marks + " marks", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
-        /*btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println("Button Clicked");
+    }
+
+    private int emptyCheck(RadioGroup[] rg,View[] adapterView) {
+        String output="";
+        if(adapterView[0].findViewById(rg[0].getCheckedRadioButtonId()) == null||adapterView[1].findViewById(rg[1].getCheckedRadioButtonId()) == null||adapterView[2].findViewById(rg[2].getCheckedRadioButtonId()) == null||adapterView[3].findViewById(rg[3].getCheckedRadioButtonId()) == null||adapterView[4].findViewById(rg[4].getCheckedRadioButtonId()) == null)
+        {
+            for(int i=0;i<5;i++) {
+                if (adapterView[i].findViewById(rg[i].getCheckedRadioButtonId()) == null) {
+                    output += (i+1)+" ";
+                }
             }
-        });*/
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //System.out.println("off");//+listView.getItemAtPosition(i).toString());
-                //Log.i("you ", "onItemClick: " );
-//                System.out.println(view.getId());
-                //adapterView.getItemAtPosition(0);
-                //System.out.println("off "+listView.getItemsCanFocus());
-//                btn.setText("offf");
-                switch (i) {
-                    case 0:
-                        System.out.println("F");
-                        break;
-                    case  1:
-                        System.out.println("C");
-
-                        break;}
-
-
-            }
-        });*/
+            Toast.makeText(customQuiz.this, "Please mark question " + output , Toast.LENGTH_SHORT).show();
+            return 0;
+        }
+        return 1;
     }
 
     private quizClass setValue(String name) {
@@ -164,7 +153,7 @@ public class customQuiz extends AppCompatActivity {
             rOpt[rand3-1]=opt3;
 
         System.out.println(name);
-        return (new quizClass(getResources().getIdentifier(name , "drawable", customQuiz.this.getPackageName()), rOpt[0], rOpt[1], rOpt[2]));//(new ArrayList<quizClass>()).add(new quizClass(getResources().getIdentifier(name , "drawable", customQuiz.this.getPackageName()), opt1, opt2, opt3));
+        return (new quizClass(getResources().getIdentifier(name , "drawable", customQuiz.this.getPackageName()), rOpt[0], rOpt[1], rOpt[2],opt1));//(new ArrayList<quizClass>()).add(new quizClass(getResources().getIdentifier(name , "drawable", customQuiz.this.getPackageName()), opt1, opt2, opt3));
 
     }
 }
