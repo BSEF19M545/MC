@@ -2,8 +2,10 @@ package com.example.sqlite_task;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,7 +58,45 @@ public class MainActivity extends AppCompatActivity {
 //                MyListView adapter = new MyListView(this, list);
                 MyListView adapter=new MyListView(getApplicationContext(),list);
                 customListView.setAdapter(adapter);
+
+
             }
         });
+//        customListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+////                Intent intent;
+////                adapterView.getItemAtPosition(0);
+//                System.out.println("adapterView.getItemAtPosition(i)");
+//                switch (i) {
+//                    case 0:
+//                        //intent=new Intent(Lessons.this,A.class);
+//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case  1:
+//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
+//
+//                        break;
+//                    case  2:
+//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
+//
+//                        break;
+//                    case  3:
+//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
+//
+//                        break;
+//
+//
+//
+//                }
+//            }
+//        });
+//        customListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//            }
+//        });
+
     }
 }

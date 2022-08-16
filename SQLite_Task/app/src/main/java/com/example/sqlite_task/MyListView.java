@@ -30,8 +30,8 @@ public class MyListView extends ArrayAdapter<Student> {
         TextView tv2= convertView.findViewById(R.id.textView14);
         TextView tv3= convertView.findViewById(R.id.textView15);
 //
-         b1=convertView.findViewById(R.id.button);
-         b2=convertView.findViewById(R.id.button2);
+         b1=convertView.findViewById(R.id.button3);
+         b2=convertView.findViewById(R.id.button4);
 //
         //b1.setText(student.getName());
 //        tv1.setText("123");
@@ -44,8 +44,15 @@ public class MyListView extends ArrayAdapter<Student> {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(this, student.toString(), Toast.LENGTH_SHORT).show();
-                System.out.printf(student.toString());
+                Toast.makeText(getContext(), student.getName(), Toast.LENGTH_SHORT).show();
+                //System.out.println("123123132abc");
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DBHelper dbHelper = new DBHelper(getContext());
+                //dbHelper.addStudent(new Student("Wahab",45,true));
             }
         });
         return convertView;
