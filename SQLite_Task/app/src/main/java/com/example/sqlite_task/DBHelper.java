@@ -56,10 +56,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert(STUDENT_TABLE, null, cv);
         db.close();
         return true;
-        //NullCoumnHack
-        //long insert =
-        //if (insert == -1) { return false; }
-        //else{return true;}
+
     }
     public boolean deleteRecord(int roll)
     {

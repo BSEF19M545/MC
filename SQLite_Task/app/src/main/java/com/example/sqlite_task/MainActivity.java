@@ -26,10 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ListView customListView;
     public Context con=MainActivity.this;
 
-    //    public Context con()
-//    {
-//        return MainActivity.this;
-//    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         editTextName=findViewById(R.id.editTextName);
         editTextRollNumber=findViewById(R.id.editTextRollNumber);
         customListView=findViewById(R.id.customListView);
+        switchIsActive=findViewById(R.id.switchStudent);
+        viewRecordButton.performClick();
 
         addRecordButton.setOnClickListener(new View.OnClickListener() {
             Student student;
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                    student = new Student(editTextName.getText().toString(), Integer.parseInt(editTextRollNumber.getText().toString()),false/*, switchIsActive.isChecked()*/);
+                    student = new Student(editTextName.getText().toString(), Integer.parseInt(editTextRollNumber.getText().toString()), switchIsActive.isChecked());
                     //Toast.makeText(MainActivity.this, Student.toString(), Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e){
@@ -80,42 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     customListView.setAdapter(adapter);
             }
         });
-        context.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                show();
-            }
-        });
-
 
     }
-    public boolean rtn;
 
-    public void show()
-    {
-//        boolean[] rtn = {false};
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setCancelable(true);
-        builder.setTitle("Confirmation");
-        builder.setMessage("Do you want to delete this record");
-        builder.setPositiveButton("Confirm",
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        rtn =true;
-                    }
-                });
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                rtn =false;
-            }
-        });
-        AlertDialog dialog = builder.create();
-
-        dialog.show();
-//        return rtn;
-//        return MainActivity.this;
-    }
 
 }

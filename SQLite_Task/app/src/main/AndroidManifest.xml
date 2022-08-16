@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLite_Task">
         <activity
+            android:name=".Update"
+            android:exported="false" />
+        <activity
+            android:name=".Confirmation"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
