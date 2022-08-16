@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button addRecordButton, viewRecordButton;
@@ -39,6 +43,19 @@ public class MainActivity extends AppCompatActivity {
                 }
                 DBHelper dbHelper  = new DBHelper(MainActivity.this);
                 dbHelper.addStudent(student);
+            }
+        });
+        viewRecordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper dbHelper = new DBHelper(MainActivity.this);
+                ArrayList<Student> list = dbHelper.getAllStudents();
+                /*ArrayAdapter arrayAdapter = new ArrayAdapter<Student>
+                        (MainActivity.this, android.R.layout.simple_list_item_1,list);
+                customListView.setAdapter(arrayAdapter);*/
+//                MyListView adapter = new MyListView(this, list);
+                MyListView adapter=new MyListView(getApplicationContext(),list);
+                customListView.setAdapter(adapter);
             }
         });
     }
