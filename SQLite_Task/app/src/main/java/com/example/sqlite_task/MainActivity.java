@@ -2,6 +2,9 @@ package com.example.sqlite_task;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,16 +20,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button addRecordButton, viewRecordButton;
+    Button addRecordButton, viewRecordButton,context;
     EditText editTextName, editTextRollNumber;
     Switch switchIsActive;
     ListView customListView;
+    public Context con=MainActivity.this;
+
+    //    public Context con()
+//    {
+//        return MainActivity.this;
+//    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addRecordButton=findViewById(R.id.addRecordButton);
         viewRecordButton=findViewById(R.id.viewRecordButton);
+        context=findViewById(R.id.context);
         editTextName=findViewById(R.id.editTextName);
         editTextRollNumber=findViewById(R.id.editTextRollNumber);
         customListView=findViewById(R.id.customListView);
@@ -36,15 +46,26 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
                 try {
                     student = new Student(editTextName.getText().toString(), Integer.parseInt(editTextRollNumber.getText().toString()),false/*, switchIsActive.isChecked()*/);
                     //Toast.makeText(MainActivity.this, Student.toString(), Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e){
                     Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 DBHelper dbHelper  = new DBHelper(MainActivity.this);
-                dbHelper.addStudent(student);
+                if(!dbHelper.addStudent(student))
+                {
+                    Toast.makeText(MainActivity.this, "Record Already Exists", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Record Added Successfully", Toast.LENGTH_SHORT).show();
+                    viewRecordButton.performClick();
+
+                }
             }
         });
         viewRecordButton.setOnClickListener(new View.OnClickListener() {
@@ -52,51 +73,49 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DBHelper dbHelper = new DBHelper(MainActivity.this);
                 ArrayList<Student> list = dbHelper.getAllStudents();
-                /*ArrayAdapter arrayAdapter = new ArrayAdapter<Student>
-                        (MainActivity.this, android.R.layout.simple_list_item_1,list);
-                customListView.setAdapter(arrayAdapter);*/
-//                MyListView adapter = new MyListView(this, list);
-                MyListView adapter=new MyListView(getApplicationContext(),list);
-                customListView.setAdapter(adapter);
-
-
+                if(list.size()==0) {
+                    Toast.makeText(MainActivity.this, "No Data Available", Toast.LENGTH_SHORT).show();
+                }
+                    MyListView adapter = new MyListView(getApplicationContext(), list);
+                    customListView.setAdapter(adapter);
             }
         });
-//        customListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-////                Intent intent;
-////                adapterView.getItemAtPosition(0);
-//                System.out.println("adapterView.getItemAtPosition(i)");
-//                switch (i) {
-//                    case 0:
-//                        //intent=new Intent(Lessons.this,A.class);
-//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case  1:
-//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
-//
-//                        break;
-//                    case  2:
-//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
-//
-//                        break;
-//                    case  3:
-//                        Toast.makeText(MainActivity.this, "list.get(i).toString()", Toast.LENGTH_SHORT).show();
-//
-//                        break;
-//
-//
-//
-//                }
-//            }
-//        });
-//        customListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//            }
-//        });
+        context.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show();
+            }
+        });
+
 
     }
+    public boolean rtn;
+
+    public void show()
+    {
+//        boolean[] rtn = {false};
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(true);
+        builder.setTitle("Confirmation");
+        builder.setMessage("Do you want to delete this record");
+        builder.setPositiveButton("Confirm",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        rtn =true;
+                    }
+                });
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                rtn =false;
+            }
+        });
+        AlertDialog dialog = builder.create();
+
+        dialog.show();
+//        return rtn;
+//        return MainActivity.this;
+    }
+
 }

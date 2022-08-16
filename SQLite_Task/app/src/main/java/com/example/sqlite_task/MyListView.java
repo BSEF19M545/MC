@@ -1,6 +1,8 @@
 package com.example.sqlite_task;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +18,17 @@ import java.util.ArrayList;
 
 public class MyListView extends ArrayAdapter<Student> {
     Button b1,b2;
+    Context con;
+
     public MyListView(@NonNull Context context, ArrayList<Student> student) {
         super(context, 0, student);
+        //con=context;
         //size=studentArrayList.size();
+    }
+   // Context con;
+    public void save(Context conn)
+    {
+        con=conn;
     }
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -44,15 +54,52 @@ public class MyListView extends ArrayAdapter<Student> {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), student.getName(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), student.getName(), Toast.LENGTH_SHORT).show();
                 //System.out.println("123123132abc");
+                DBHelper dbHelper = new DBHelper(getContext());
+                dbHelper.updateRecord(123,"cba",true);
             }
         });
+
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DBHelper dbHelper = new DBHelper(getContext());
-                //dbHelper.addStudent(new Student("Wahab",45,true));
+//                new MainActivity().context.performClick();
+
+//                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.getC);
+//                builder.setCancelable(true);
+//                builder.setTitle("Confirmation");
+//                builder.setMessage("Do you want to delete this record");
+//                builder.setPositiveButton("Confirm",
+//                        new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+////                MainActivity main=new MainActivity();
+//                if(new MainActivity().rtn) {
+//                    dbHelper.deleteRecord(student.getRollNumber());
+//                    Toast.makeText(getContext(), "Record Deleted Successfully", Toast.LENGTH_SHORT).show();
+//                    new MainActivity().viewRecordButton.performClick();
+//
+//                }
+//                else
+//                {
+//                    Toast.makeText(getContext(), "Record Not Deleted", Toast.LENGTH_SHORT).show();
+//
+//                }
+//                            }
+//                        });
+//                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        //Toast.makeText(getContext(), "Record Not Deleted", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
+
+//                AlertDialog dialog = builder.create();
+//                dialog.show();
+
             }
         });
         return convertView;

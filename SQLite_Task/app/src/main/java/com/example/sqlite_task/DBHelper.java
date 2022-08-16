@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -39,20 +40,63 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void  addStudent(Student Student){
-        SQLiteDatabase db = this.getWritableDatabase();
+    public boolean  addStudent(Student Student){
         //Hash map, as we did in bundles
+        if(searchRecord(Student.getRollNumber()))
+        {
+            return false;
+        }
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
+
 
         cv.put(STUDENT_NAME, Student.getName());
         cv.put(STUDENT_ROLL, Student.getRollNumber());
         cv.put(STUDENT_ENROLL, Student.isEnroll());
         db.insert(STUDENT_TABLE, null, cv);
         db.close();
+        return true;
         //NullCoumnHack
         //long insert =
         //if (insert == -1) { return false; }
         //else{return true;}
+    }
+    public boolean deleteRecord(int roll)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        boolean rtn=db.delete(STUDENT_TABLE, STUDENT_ROLL + "=" + roll, null) > 0;
+        db.close();
+
+        return rtn;
+    }
+    public boolean searchRecord(int roll)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String Query = "Select * from " + STUDENT_TABLE + " where " + STUDENT_ROLL + " = " + roll;
+        Cursor cursor = db.rawQuery(Query, null);
+        if(cursor.getCount() <= 0){
+            cursor.close();
+            db.close();
+            return false;
+        }
+        cursor.close();
+        db.close();
+        return true;
+    }
+
+    public boolean updateRecord(int roll,String name,boolean enroll)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues data=new ContentValues();
+        data.put(STUDENT_NAME,name);
+        data.put(STUDENT_ENROLL,enroll);
+        int rtn=db.update(STUDENT_TABLE, data, STUDENT_ROLL+"=" + roll, null);
+//        boolean rtn=db.delete(STUDENT_TABLE, STUDENT_ROLL + "=" + roll, null) > 0;
+        db.close();
+        if(rtn>0)
+            return true;
+        return false;
+        //return rtn;
     }
 
     public ArrayList<Student> getAllStudents() {
